@@ -1,0 +1,99 @@
+@base-bg-color: #ebebeb;
+@primary-color: #dc3545;
+@primary-color2: rgb(12, 11, 11);
+@secondary-color: #053769;
+@text-color: #666;
+@border-color: #ddd;
+
+.privacy-policy {
+    background-color: @base-bg-color;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-size: 20px;
+
+    i {
+        font-size: 50px;
+        color: @primary-color;
+    }
+
+    h4 {
+        font-weight: bold;
+    }
+}
+
+.policy-text {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-right: 70px;
+
+    p {
+        font-size: 15px;
+    }
+}
+
+.service-card {
+    border: 1px solid @border-color;
+    border-radius: 5px;
+    padding: 15px;
+    text-align: center;
+
+    h3 {
+        transition: color 0.3s ease;
+        font-weight: bold;
+        text-align: start;
+        cursor: pointer; //thay đổi biểu tượng thành con trỏ chuột
+
+        &:hover {
+            color: red; // Chuyển sang màu đỏ khi hover
+        }
+    }
+
+    img {
+        max-width: 100%;
+        border-bottom: 1px solid @border-color;
+        margin-bottom: 15px;
+        cursor: pointer;
+    }
+
+    p {
+        font-size: 14px;
+        color: @text-color;
+        text-align: start;
+
+    }
+
+    a {
+        font-weight: bold;
+        color: @secondary-color;
+        text-decoration: none;
+    }
+
+    .btn {
+        display: inline-block;
+        font-size: 16px;
+        font-weight: bold;
+        color: @secondary-color;
+        text-decoration: none;
+        cursor: pointer;
+        position: relative; // Thêm thuộc tính để gạch chân hoạt động chính xác
+        margin-right: 89%;
+
+        &::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 10;
+            width: 0;
+            height: 1.5px;
+            background-color: @primary-color2; // Sử dụng màu chính cho gạch chân
+            transition: width 0.6s ease;
+        }
+
+        &:hover::before {
+            width: 85%; // Khi hover, gạch chân sẽ mở rộng
+        }
+    }
+}
